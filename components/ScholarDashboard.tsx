@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, Filter, MapPin, Calendar, ArrowRight, Tag, DollarSign, Upload, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Search, Filter, MapPin, Calendar, ArrowRight, Upload, CheckCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { MOCK_CONFERENCES, PRINTING_COST, DESIGN_COST } from '../constants';
-import { Conference, OrderDraft } from '../types';
+import { Conference } from '../types';
 
 interface ScholarDashboardProps {
   onBack: () => void;
@@ -9,7 +9,7 @@ interface ScholarDashboardProps {
 
 const ITEMS_PER_PAGE = 12;
 
-const ScholarDashboard: React.FC<ScholarDashboardProps> = ({ onBack }) => {
+const ScholarDashboard: React.FC<ScholarDashboardProps> = ({ onBack: _ }) => {
   const [selectedConference, setSelectedConference] = useState<Conference | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedTag, setSelectedTag] = useState<string | null>(null);

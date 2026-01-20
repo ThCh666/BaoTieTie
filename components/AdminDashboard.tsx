@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ShieldCheck, Users, FileText, CheckCircle, XCircle, Clock, Eye, Briefcase, DollarSign } from 'lucide-react';
-import { MOCK_CONFERENCES } from '../constants';
 
 // Mock Data for Admin
 const MOCK_VERIFICATIONS = [
@@ -26,12 +25,12 @@ const AdminDashboard: React.FC = () => {
   const [orders, setOrders] = useState(MOCK_ORDERS);
 
   // Handlers
-  const handleVerify = (id: number, approved: boolean) => {
+  const handleVerify = (id: number, _approved: boolean) => {
     setVerifications(prev => prev.filter(v => v.id !== id));
     // In a real app, send API call
   };
 
-  const handleServiceReview = (id: number, approved: boolean) => {
+  const handleServiceReview = (id: number, _approved: boolean) => {
     setServices(prev => prev.filter(s => s.id !== id));
   };
 

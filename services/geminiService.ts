@@ -1,5 +1,9 @@
 import { GoogleGenAI } from "@google/genai";
 
+// Declare process for TypeScript to avoid "Cannot find name 'process'" error in client-side code
+// where Vite replaces it.
+declare const process: any;
+
 // Initialize Gemini Client
 // The API key must be obtained exclusively from the environment variable process.env.API_KEY.
 // Assume process.env.API_KEY is pre-configured and accessible.
@@ -20,7 +24,7 @@ export const generateAssistantResponse = async (userQuery: string): Promise<stri
         3. 如果被问及，可以总结主要学术会议的基本信息。
         
         请使用中文（简体）回答所有问题。保持回答简洁、专业且富有助益。`,
-        thinkingConfig: { thinkingBudget: 0 } // Disable thinking for faster chat response
+        // Thinking budget removed to ensure build compatibility with the installed SDK version
       }
     });
     

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Upload, Plus, FileText, CreditCard, CheckCircle, Clock, MapPin, AlertCircle } from 'lucide-react';
+import { Upload, Plus, FileText, CreditCard, CheckCircle, AlertCircle } from 'lucide-react';
 import { MOCK_CONFERENCES } from '../constants';
 
 const ProviderDashboard: React.FC = () => {
