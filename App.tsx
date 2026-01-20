@@ -4,7 +4,6 @@ import RoleSelection from './components/RoleSelection';
 import ScholarDashboard from './components/ScholarDashboard';
 import ProviderDashboard from './components/ProviderDashboard';
 import AdminDashboard from './components/AdminDashboard';
-import AiAssistant from './components/AiAssistant';
 import { UserRole } from './types';
 
 const App: React.FC = () => {
@@ -26,17 +25,11 @@ const App: React.FC = () => {
       )}
       
       {currentRole === UserRole.SCHOLAR && (
-        <>
-          <ScholarDashboard onBack={() => {}} />
-          <AiAssistant />
-        </>
+        <ScholarDashboard onBack={() => {}} />
       )}
 
       {currentRole === UserRole.PROVIDER && (
-        <>
-          <ProviderDashboard />
-          <AiAssistant />
-        </>
+        <ProviderDashboard />
       )}
 
       {currentRole === UserRole.ADMIN && (
